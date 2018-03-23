@@ -1,0 +1,15 @@
+$Variable
+S
+A, B, C
+
+$Production
+S -> Aa | Bb | Cc
+A -> a | Aa
+B -> b | Bb
+C -> c | Cc
+
+$Terminal
+a, b, c
+
+$Start Symbol
+S
