@@ -1,15 +1,13 @@
 'use strict'
 
+const fs = require('fs')
 const path = require('path')
+
+const dir = path.resolve(__dirname, '../define')
 
 module.exports = {
   // 需要识别的文法文件，需填写完整路径
   grammerFiles: [
-    path.resolve(__dirname, '../define/0.txt'),
-    path.resolve(__dirname, '../define/1.txt'),
-    path.resolve(__dirname, '../define/2.txt'),
-    path.resolve(__dirname, '../define/3.txt'),
-    path.resolve(__dirname, '../define/lrg.txt'),
-    path.resolve(__dirname, '../define/rrg.txt'),
+    ...fs.readdirSync(dir).map(file => path.resolve(dir, file))
   ]
 }
